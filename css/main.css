@@ -1,0 +1,10 @@
+/* ==========================================================================
+   FinPulse-OS — Main stylesheet
+   Import order matters: reset -> tokens -> layout -> components -> pages
+   ========================================================================== */
+
+@import url('reset.css');
+@import url('tokens.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('dashboard.css');
