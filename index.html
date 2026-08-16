@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinPulse-OS | Personal Finance Dashboard</title>
+<meta name="description" content="Track your finances, budgets, goals, and spending insights in real time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="app-shell">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-mark">F</div>
+      <span class="sidebar__brand-name">FinPulse</span>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#dashboard" class="nav-link is-active">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span> Dashboard
+      </a>
+      <a href="#transactions" class="nav-link">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg></span> Transactions
+      </a>
+      <a href="#budget" class="nav-link">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10l8.5 5A10 10 0 1 1 12 2z"/></svg></span> Budget Planner
+      </a>
+      <a href="#goals" class="nav-link">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span> Goals
+      </a>
+      <a href="#insights" class="nav-link">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8L12 3z"/></svg></span> AI Insights
+      </a>
+      <a href="#analytics" class="nav-link">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="12"/><line x1="12" y1="20" x2="12" y2="6"/><line x1="18" y1="20" x2="18" y2="15"/></svg></span> Analytics
+      </a>
+      <a href="#settings" class="nav-link">
+        <span class="nav-link__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V19a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H4a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H10a1.7 1.7 0 0 0 1-1.5V4a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V10a1.7 1.7 0 0 0 1.5 1H20a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1z"/></svg></span> Settings
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      Built by <strong style="color:var(--color-accent-400)">KRIXORA</strong>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="topbar__menu-btn btn-icon btn-ghost" id="menuToggle" aria-label="Toggle menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+      <div class="topbar__search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Search transactions">
+      </div>
+
+      <div class="topbar__actions">
+        <button class="topbar__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <span class="topbar__badge"></span>
+        </button>
+        <button class="btn btn-primary btn-sm" id="addTransactionBtn">+ Add Transaction</button>
+      </div>
+    </header>
+
+    <div class="page">
+
+      <!-- ============ DASHBOARD ============ -->
+      <section class="page-section" id="dashboard">
+        <div class="page-section__header">
+          <div>
+            <h1 class="page-section__title">Welcome back, Krish</h1>
+            <p class="page-section__subtitle">Here's your financial overview for August 2026.</p>
+          </div>
+        </div>
+
+        <div class="grid-stats">
+          <div class="card stat-card">
+            <div class="stat-card__top">
+              <span class="stat-card__label">Total Balance</span>
+              <div class="stat-card__icon stat-card__icon--accent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2"/><circle cx="16" cy="13" r="1.5"/></svg></div>
+            </div>
+            <div class="stat-card__value stat-card__value--accent">&#8377;1,24,580</div>
+            <div class="stat-card__meta">Across all accounts</div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-card__top">
+              <span class="stat-card__label">Monthly Income</span>
+              <div class="stat-card__icon stat-card__icon--success"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg></div>
+            </div>
+            <div class="stat-card__value">&#8377;48,000</div>
+            <div class="stat-card__meta stat-card__meta--positive">+12% vs last month</div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-card__top">
+              <span class="stat-card__label">Monthly Expense</span>
+              <div class="stat-card__icon stat-card__icon--danger"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="18 13 12 19 6 13"/></svg></div>
+            </div>
+            <div class="stat-card__value">&#8377;22,340</div>
+            <div class="stat-card__meta stat-card__meta--negative">+4% vs last month</div>
+          </div>
+        </div>
+
+        <div class="grid-charts">
+          <div class="card">
+            <div class="card__header">
+              <span class="card__title">Cash Flow Trend</span>
+              <div class="tab-group">
+                <span class="tab is-active">1M</span>
+                <span class="tab">3M</span>
+                <span class="tab">1Y</span>
+              </div>
+            </div>
+            <div class="chart-card__canvas-wrap">
+              <canvas id="cashFlowChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <span class="card__title">Budget Gauge</span>
+              <button class="btn btn-ghost btn-sm">Edit</button>
+            </div>
+            <div class="gauge-wrap">
+              <div class="gauge">
+                <canvas id="budgetGauge"></canvas>
+                <div class="gauge__value">
+                  <div class="gauge__percent">46%</div>
+                  <div class="gauge__label">Used</div>
+                </div>
+              </div>
+              <div class="gauge__remaining">Remaining: &#8377;25,660</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-charts">
+          <!-- Recent transactions -->
+          <div class="card">
+            <div class="card__header">
+              <span class="card__title">Recent Transactions</span>
+              <div class="tab-group">
+                <span class="tab is-active">All</span>
+                <span class="tab">Income</span>
+                <span class="tab">Expense</span>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr><th>Date</th><th>Title</th><th>Category</th><th>Amount</th></tr>
+              </thead>
+              <tbody id="recentTransactionsBody">
+                <tr>
+                  <td>Aug 14</td>
+                  <td class="table-row-icon"><span class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/></svg></span> Grocery Store</td>
+                  <td><span class="badge badge--neutral">Food</span></td>
+                  <td style="color:var(--color-danger)">&minus;&#8377;1,240</td>
+                </tr>
+                <tr>
+                  <td>Aug 12</td>
+                  <td class="table-row-icon"><span class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span> Freelance Payment</td>
+                  <td><span class="badge badge--neutral">Income</span></td>
+                  <td style="color:var(--color-success)">+&#8377;15,000</td>
+                </tr>
+                <tr>
+                  <td>Aug 10</td>
+                  <td class="table-row-icon"><span class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><line x1="7" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="17" y2="20"/><line x1="3" y1="9" x2="7" y2="9"/><line x1="3" y1="15" x2="7" y2="15"/><line x1="17" y1="9" x2="21" y2="9"/><line x1="17" y1="15" x2="21" y2="15"/></svg></span> Netflix</td>
+                  <td><span class="badge badge--neutral">Entertainment</span></td>
+                  <td style="color:var(--color-danger)">&minus;&#8377;499</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Spending category -->
+          <div class="card">
+            <div class="card__header">
+              <span class="card__title">Spending Category</span>
+            </div>
+            <div class="category-list" id="categoryList">
+              <div class="category-row">
+                <div class="category-row__info">
+                  <div class="category-row__top">
+                    <span class="category-row__name">Food & Groceries</span>
+                    <span class="category-row__amount">&#8377;8,200</span>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill" style="width:62%"></div></div>
+                </div>
+              </div>
+              <div class="category-row">
+                <div class="category-row__info">
+                  <div class="category-row__top">
+                    <span class="category-row__name">Transport</span>
+                    <span class="category-row__amount">&#8377;3,400</span>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill" style="width:34%"></div></div>
+                </div>
+              </div>
+              <div class="category-row">
+                <div class="category-row__info">
+                  <div class="category-row__top">
+                    <span class="category-row__name">Entertainment</span>
+                    <span class="category-row__amount">&#8377;1,900</span>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill" style="width:18%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TRANSACTIONS ============ -->
+      <section class="page-section" id="transactions">
+        <div class="page-section__header">
+          <div>
+            <h2 class="page-section__title">All Transactions</h2>
+            <p class="page-section__subtitle">Complete history of your income and expenses.</p>
+          </div>
+          <div style="display:flex; gap: var(--space-3)">
+            <button class="btn btn-secondary btn-sm">Reset Filters</button>
+            <button class="btn btn-primary btn-sm">+ Add New</button>
+          </div>
+        </div>
+        <div class="card">
+          <table class="table">
+            <thead>
+              <tr><th>Date</th><th>Title</th><th>Category</th><th>Amount</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="allTransactionsBody">
+              <tr>
+                <td>Aug 14</td>
+                <td class="table-row-icon"><span class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/></svg></span> Grocery Store</td>
+                <td><span class="badge badge--neutral">Food</span></td>
+                <td style="color:var(--color-danger)">&minus;&#8377;1,240</td>
+                <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ BUDGET PLANNER ============ -->
+      <section class="page-section" id="budget">
+        <div class="page-section__header">
+          <div>
+            <h2 class="page-section__title">Monthly Budget Planner</h2>
+            <p class="page-section__subtitle">Set spending limits and track thresholds by category.</p>
+          </div>
+          <button class="btn btn-primary btn-sm">Set Limit Threshold</button>
+        </div>
+        <div class="grid-two" id="budgetGrid">
+          <div class="card">
+            <div class="card__header">
+              <span class="card__title">Food & Groceries</span>
+              <span class="badge badge--warning">76% used</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill progress-fill--warning" style="width:76%"></div></div>
+            <p style="margin-top:var(--space-3); font-size:var(--text-sm); color:var(--color-text-secondary)">&#8377;8,200 of &#8377;10,800 limit</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GOALS ============ -->
+      <section class="page-section" id="goals">
+        <div class="page-section__header">
+          <div>
+            <h2 class="page-section__title">Savings Goals</h2>
+            <p class="page-section__subtitle">Track your financial targets and milestones.</p>
+          </div>
+          <button class="btn btn-primary btn-sm">+ New Goal</button>
+        </div>
+        <div class="grid-two" id="goalsGrid">
+          <div class="card goal-card">
+            <div class="goal-card__header">
+              <span class="goal-card__title">Emergency Fund</span>
+              <span class="goal-card__deadline">Dec 2026</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:58%"></div></div>
+            <div class="goal-card__amounts">
+              <span>&#8377;58,000 saved</span>
+              <span>Target: &#8377;1,00,000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AI INSIGHTS ============ -->
+      <section class="page-section" id="insights">
+        <div class="page-section__header">
+          <div>
+            <h2 class="page-section__title">Spending Insights & AI Tips</h2>
+            <p class="page-section__subtitle">Smart automated analysis of your expense patterns.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:var(--space-5)">
+          <div class="card__header"><span class="card__title">Financial Health Score</span></div>
+          <div class="health-score">
+            <div class="health-score__ring">
+              <canvas id="healthScoreRing"></canvas>
+            </div>
+            <div class="health-score__details">
+              <div class="stat-card__value stat-card__value--accent" style="font-size:var(--text-2xl)">78 / 100</div>
+              <p style="font-size:var(--text-sm); color:var(--color-text-secondary); margin-top:var(--space-1)">Good — your savings rate improved this month.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-two" id="insightsGrid">
+          <div class="card insight-card">
+            <div class="insight-card__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8L12 3z"/></svg></div>
+            <div class="insight-card__body">
+              <strong>Dining spend is up 22%</strong>
+              <p>You've spent more on food delivery this month compared to your 3-month average.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ANALYTICS ============ -->
+      <section class="page-section" id="analytics">
+        <div class="page-section__header">
+          <div>
+            <h2 class="page-section__title">Deep Analytics</h2>
+            <p class="page-section__subtitle">Granular breakdowns of your spending patterns.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__header"><span class="card__title">Expense Breakdown by Category</span></div>
+          <div class="chart-card__canvas-wrap">
+            <canvas id="categoryPieChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="page-section" id="settings">
+        <div class="page-section__header">
+          <div>
+            <h2 class="page-section__title">System Preferences</h2>
+          </div>
+        </div>
+        <div class="card" style="display:flex; flex-direction:column; gap:var(--space-4); max-width:480px;">
+          <div class="field">
+            <label class="field__label">Full Name</label>
+            <input class="input" type="text" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label class="field__label">Email Address</label>
+            <input class="input" type="email" placeholder="you@example.com">
+          </div>
+          <div style="display:flex; gap:var(--space-3)">
+            <button class="btn btn-secondary">Export CSV Report</button>
+            <button class="btn btn-danger-outline" id="logoutBtn">Log Out</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADD TRANSACTION MODAL ============ -->
+<div class="modal-overlay" id="transactionModal" style="display:none;">
+  <div class="modal">
+    <div class="modal__header">
+      <span class="modal__title">Add Transaction</span>
+      <button class="btn-icon btn-ghost" id="closeModalBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
+    </div>
+    <div class="tab-group">
+      <span class="tab is-active">Expense</span>
+      <span class="tab">Income</span>
+    </div>
+    <div class="field">
+      <label class="field__label">Title</label>
+      <input class="input" type="text" placeholder="e.g. Grocery shopping">
+    </div>
+    <div class="field">
+      <label class="field__label">Amount (&#8377;)</label>
+      <input class="input" type="number" placeholder="0.00">
+    </div>
+    <div class="field">
+      <label class="field__label">Category</label>
+      <select class="select">
+        <option>Food & Groceries</option>
+        <option>Transport</option>
+        <option>Entertainment</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="field__label">Date</label>
+      <input class="input" type="date">
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+      <button class="btn btn-primary">Save Record</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
